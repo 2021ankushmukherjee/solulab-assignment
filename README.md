@@ -9,5 +9,8 @@ for start the server
 # npm run dev:
 for start the application in dev mode
 
-# folder-structure
+# folder-structure:
 see folder-structure-postman folder for postman folder structure
+
+# video-assignment.zip:
+unzip the file to see small screen recording of the project
