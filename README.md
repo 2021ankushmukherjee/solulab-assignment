@@ -8,3 +8,6 @@ for start the server
 
 # npm run dev:
 for start the application in dev mode
+
+# folder-structure
+see folder-structure-postman folder for postman folder structure
