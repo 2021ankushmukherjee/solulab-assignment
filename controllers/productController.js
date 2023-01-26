@@ -83,12 +83,12 @@ exports.getAllProducts = async (req,res)=>{
 }
 
 
-// Read
+// Read Product
 
 exports.getProduct = async (req,res)=>{
     try{
 
-        const product = await Product.findById(req.body.id);
+        const product = await Product.findById(req.body.id).populate("categoryId");
 
         if(!product){
             res.status(404).json({
