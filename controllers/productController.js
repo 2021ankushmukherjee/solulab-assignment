@@ -1,5 +1,5 @@
 const Product = require("../models/productModel");
-const Category = require("../models/categoryModel")
+const Category = require("../models/categoryModel");
 
 
 // Create Product
@@ -64,7 +64,7 @@ exports.createProduct = async (req,res)=>{
 
 
 
-// get All Product
+// Read All Product
 
 exports.getAllProducts = async (req,res)=>{
     try{
@@ -77,10 +77,39 @@ exports.getAllProducts = async (req,res)=>{
     catch(err){
         res.status(400).json({
             success:false,
+            message: `products not get for:- ${err.message}`
+        });
+    }
+}
+
+
+// Read
+
+exports.getProduct = async (req,res)=>{
+    try{
+
+        const product = await Product.findById(req.body.id);
+
+        if(!product){
+            res.status(404).json({
+                success:false,
+                message: "Product not found"
+            });
+        }
+
+        res.status(200).json({
+            success:true,
+            product
+        });
+    }
+    catch(err){
+        res.status(400).json({
+            success:false,
             message: `product not get for:- ${err.message}`
         });
     }
 }
+
 
 
 // update Product
