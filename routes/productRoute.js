@@ -7,8 +7,6 @@ router.route("/create").post(createProduct);
 router.route("/readall").get(getAllProducts);
 router.route("/read").get(getProduct);
 router.route("/update/:id").put(updateProduct);
-router.route("/delete/:id").delete(deleteProduct);
+router.route("/delete").delete(deleteProduct);
 
-module.exports=router;
-
-
+module.exports=router
