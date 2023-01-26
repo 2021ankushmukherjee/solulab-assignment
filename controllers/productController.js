@@ -68,7 +68,7 @@ exports.createProduct = async (req,res)=>{
 
 exports.getAllProducts = async (req,res)=>{
     try{
-        const products = await Product.find();
+        const products = await Product.find().populate("categoryId");
         res.status(200).json({
             success:true,
             products
